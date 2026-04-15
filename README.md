@@ -14,6 +14,7 @@ JavaScript
 
 このサイトはnetlifyを使ってインターネット上で閲覧することを想定しているため、ローカル環境だとメニューバーが表示されません。
 ご注意ください。
+[https://shibainu-scrapbook.netlify.app/](https://shibainu-scrapbook.netlify.app/)
 
 ## こだわったポイント・工夫など
 
