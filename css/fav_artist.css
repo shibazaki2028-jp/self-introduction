@@ -1,0 +1,142 @@
+/* ===============================================
+   好きなアーティスト紹介(fav_artist.html)
+   =============================================== */
+/* --- 好きなものリスト --- */
+.likes-list>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.likes-list>ul>li {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* リストの先頭に音符マークを付ける */
+.with-icon::before {
+    content: '♪';
+    position: absolute;
+    left: 0;
+    color: #f39c12;
+    font-size: 1.0em;
+}
+
+/* --- アーティスト情報をカード風にする --- */
+/* 親リストの項目(li)をカード化 */
+.likes-list>ul>li {
+    background-color: #f9f9f9;
+    /* カードの背景色 */
+    border: 1px solid #eee;
+    /* カードの枠線 */
+    border-radius: 8px;
+    /* カードの角を丸くする */
+    padding: 20px;
+    /* カードの内側の余白 */
+    margin-bottom: 30px;
+    /* カード間の余白 */
+    position: relative;
+}
+
+/* カード内のh3（おすすめの曲）のスタイル */
+.likes-list h3 {
+    margin-top: 25px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* 親リスト (アーティスト名) のデザイン */
+.likes-list>li {
+    list-style-type: square;
+    /* マーカーを四角に */
+    font-size: 1.5rem;
+    /* 文字を少し大きく */
+    font-weight: bold;
+    /* 文字を太く */
+    margin-bottom: 20px;
+    /* 各アーティスト間の余白 */
+}
+
+/* 紹介文(pタグ)のスタイルを標準に戻す */
+.likes-list>ul>li p {
+    font-size: 1rem !important;
+    /* 文字サイズを標準に */
+    font-weight: normal !important;
+    /* 文字の太さを標準に */
+    margin-top: 10px;
+    /* アーティスト名との間に少し余白を作る */
+}
+
+/* 子リスト (おすすめ曲) のデザイン */
+.recommend li {
+    list-style-type: disc;
+    /* マーカーを通常の丸に */
+    font-size: 1rem;
+    /* 文字サイズを標準に戻す */
+    font-weight: normal;
+    /* 文字の太さを標準に戻す */
+    border-bottom: 1px dashed #ccc;
+    /* グレーの破線の下線 */
+    margin-bottom: 5px;
+    /* 曲名の間の余白 */
+}
+
+
+
+
+/* --- ナビゲーションメニュー --- */
+/* --- ナビゲーションメニュー（付箋風） --- */
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* 【追加】アイテムを折り返す設定 */
+    width: 650px;
+    /* 【追加】メニュー全体の幅（ボタン3つ分くらい） */
+    margin: 0 auto;
+    /* 【追加】メニューブロック自体を中央に配置 */
+    padding: 0;
+    list-style-type: none;
+}
+
+/* liに少し余白を持たせて付箋が重ならないようにする */
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px 20px;
+    background-color: #ffe7f9;
+    /* 付箋の色 */
+    color: #5D4037;
+    /* 文字の色 */
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffc4f4;
+    border-bottom: 2px solid #fb2ddf;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: all 0.2s ease;
+}
+
+/* 偶数番目の傾きを変える */
+nav ul li:nth-child(even) a {
+    transform: rotate(2deg);
+}
+
+nav ul li a:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*h2がメニューと横並びにならないよう空白を設定*/
+main h2 {
+    margin-top: 40px;
+    /* main要素内のh2の上に余白を追加 */
+}

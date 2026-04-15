@@ -1,0 +1,63 @@
+/* ===============================================
+   各SNS等リンク
+   =============================================== */
+
+/* --- リンク集 --- */
+.link-collection h2 {
+    text-align: center; /*「Links」の文字を中央に */
+}
+
+/* カードを並べるためのコンテナ */
+.link-cards {
+    display: flex; /* Flexboxを有効化 */
+    flex-wrap: wrap; /* カードを折り返す */
+    justify-content: center; /* カードを中央に寄せる */
+    gap: 20px; /* カード間の余白 */
+    margin-top: 20px;
+}
+
+/* カード自体のデザイン */
+.link-card {
+    /* display: block; は不要になるので削除またはコメントアウト */
+    display: flex;           /* 【追加】Flexboxを有効化 */
+    flex-direction: column;  /* 【追加】アイテムを縦に並べる */
+    justify-content: center; /* 【追加】アイテムを垂直方向の中央に */
+    width: 250px;
+    min-height: 220px; /*【任意】カードの高さを揃える */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    text-decoration: none; /* リンクの下線を消す */
+    color: inherit; /* 親要素の文字色を継承 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* カードにマウスが乗った時の効果 */
+.link-card:hover {
+    transform: translateY(-5px); /* 少し上に浮き上がる */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* アイコン部分の円 */
+.link-card .icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px; /* 文字を上下中央に */
+    border-radius: 50%; /* 円にする */
+    margin: 0 auto 15px auto; /* アイコンの上下左右の余白 */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.link-card h3 {
+    margin: 0 0 5px 0;
+}
+
+.link-card p {
+    font-size: 0.9rem;
+    margin: 0;
+    text-indent: 0; /* 段落の字下げをリセット */
+}

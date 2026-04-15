@@ -1,0 +1,44 @@
+/* ===============================================
+   追加ログ(update_content.html)
+   =============================================== */
+
+/* --- 追加ログ（更新履歴）ページ --- */
+.update-log {
+    border-left: 3px solid #c4dcff; /* 全体を貫くタイムラインの線 */
+    margin-left: 10px;
+}
+
+/* 日付のデザイン */
+.update-log dt {
+    position: relative;
+    background-color: #eae7ff; /* 背景色をメニューボタンと合わせる */
+    padding: 8px 15px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* 日付の前の丸いマーク */
+.update-log dt::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px; /* 左のタイムライン線上に配置 */
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-color: #fb2d64;
+    border-radius: 50%; /* 円にする */
+    border: 2px solid #fff;
+}
+
+/* 更新内容のデザイン */
+.update-log dd {
+    padding: 15px;
+    margin: 0 0 20px 0; /* 下に余白、左の余白はリセット */
+}
+
+/* 更新内容の箇条書きリスト */
+.update-log dd ul {
+    list-style-type: '✓ '; /* 先頭のマークをチェックマークに */
+    padding-left: 20px;
+}

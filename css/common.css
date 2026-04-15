@@ -1,0 +1,221 @@
+/* ===============================================
+   共通スタイル（すべてのページで使う）
+   =============================================== */
+
+/* Google Fontsから手書き風フォントと読みやすいフォントを読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* --- 全体のデザイン --- */
+body {
+    background-color: #FDFCF7;
+    /* 少しクリーム色がかった背景 */
+    color: #444;
+    /* 文字の色を少し柔らかい黒に */
+    font-family: 'Noto Sans JP', sans-serif;
+    /* 全体のフォント */
+    line-height: 1.8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* --- ページのノート部分 --- */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* ふんわりした影 */
+    border: 1px solid #eee;
+}
+
+/* --- サイトのタイトル --- */
+h1 {
+    font-family: 'Caveat', cursive;
+    /* 手書き風フォント */
+    font-size: 3rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-bottom: 2px dotted #ccc;
+    /* 点線の下線 */
+    padding-bottom: 10px;
+}
+
+/* --- マーカー風の見出し --- */
+h2 {
+    font-size: 1.5rem;
+    /* マーカーを引いたような背景 */
+    background: linear-gradient(transparent 60%, #FFFAB3 60%);
+    display: inline;
+    /* 文字の幅だけマーカーが引かれるように */
+    padding: 0 5px;
+}
+/* カードのアイコン（Font Awesome用） */
+.link-card i {
+    font-size: 3rem; /* アイコンの大きさを指定 */
+    margin-bottom: 15px; /* アイコンとタイトルの間の余白 */
+}
+
+/* ===============================================
+   ナビゲーションメニュー
+   =============================================== */
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* 【追加】アイテムを折り返す設定 */
+    width: 650px;
+    /* 【追加】メニュー全体の幅（ボタン3つ分くらい） */
+    margin: 0 auto;
+    /* 【追加】メニューブロック自体を中央に配置 */
+    padding: 0;
+    list-style-type: none;
+}
+
+/* liに少し余白を持たせて付箋が重ならないようにする */
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px 20px;
+    background-color: #ffe7f9;
+    /* 付箋の色 */
+    color: #5D4037;
+    /* 文字の色 */
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffc4f4;
+    border-bottom: 2px solid #fb2ddf;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: all 0.2s ease;
+}
+
+/* 偶数番目の傾きを変える */
+nav ul li:nth-child(even) a {
+    transform: rotate(2deg);
+}
+
+nav ul li a:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*h2がメニューと横並びにならないよう空白を設定*/
+main h2 {
+    margin-top: 40px;
+    /* main要素内のh2の上に余白を追加 */
+}
+
+/* ===============================================
+   工事中のページの表示
+   =============================================== */
+
+/* --- 工事中表示パネル --- */
+/* パネル全体のスタイル */
+.construction-notice {
+    border: 2px dashed #fdd835;
+    /* 黄色い破線 */
+    background-color: #fffbea;
+    /* 薄いクリーム色 */
+    border-radius: 8px;
+    /* 角を丸くする */
+    padding: 25px;
+    /* 内側の余白 */
+    max-width: 500px;
+    /* 最大幅を指定 */
+    margin: 40px auto;
+    /* 上下の余白と、左右中央揃え */
+    text-align: center;
+    /* 中の文字やアイコンを中央揃え */
+    color: #555;
+}
+
+/* アイコン（絵文字）のスタイル */
+.construction-notice .icon {
+    font-size: 3rem;
+    /* アイコンを大きくする */
+}
+
+/* メインメッセージのスタイル */
+.construction-notice h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* 補足メッセージのスタイル */
+.construction-notice p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ===============================================
+   レスポンシブ対応（スマホ用スタイル）
+   画面の幅が768px以下の場合に適用
+   =============================================== */
+@media (max-width: 768px) {
+
+    /* --- ページのノート部分 --- */
+    .container {
+        /* スマホでは左右の余白を減らす */
+        padding: 20px 15px;
+    }
+
+    /* --- サイトのタイトル --- */
+    h1 {
+        font-size: 2.2rem;
+        /* 少し小さくする */
+    }
+
+    /* --- 見出し --- */
+    h2 {
+        font-size: 1.3rem;
+        /* 少し小さくする */
+    }
+
+    /* --- ナビゲーションメニュー --- */
+    nav ul {
+        width: 100%;
+        /* 幅を画面いっぱいに */
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+        /* ボタンの左右の余白を少し詰める */
+        font-size: 0.9rem;
+        /* 文字を少し小さくする */
+    }
+
+    /* --- 画像を左右に配置するスタイル --- */
+    /* スマホでは回り込みを解除して中央に配置 */
+    .align-left,
+    .align-right {
+        float: none;
+        /* 回り込みを解除 */
+        display: block;
+        margin: 20px auto;
+        /* 上下左右の余白を調整し中央寄せ */
+    }
+
+    /* 日記ページの画像汎用スタイル */
+    .diary-img {
+        max-width: 90%;
+        /* 画面幅の90%を最大幅にする */
+    }
+}
