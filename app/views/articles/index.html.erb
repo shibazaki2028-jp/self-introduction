@@ -1,0 +1,33 @@
+<h2>記事管理</h2>
+<div class="admin-panel">
+  <div class="admin-actions">
+    <%= link_to "新規記事を作成", new_article_path, class: "btn-primary" %>
+    <%= link_to "トップページを見る", root_path, class: "btn-secondary" %>
+  </div>
+
+  <% if @articles.any? %>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>作成日</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= l(article.created_at, format: :long) %></td>
+            <td class="row-actions">
+              <%= link_to "編集", edit_article_path(article), class: "btn-secondary" %>
+              <%= button_to "削除", article_path(article), method: :delete, class: "btn-danger", form: { data: { turbo_confirm: "この記事を削除しますか？" } } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>記事はまだありません。新規作成してください。</p>
+  <% end %>
+</div>

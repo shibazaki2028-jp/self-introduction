@@ -1,0 +1,18 @@
+<header>
+  <h1>しばいぬの日記帳</h1>
+  <nav>
+    <h2>メニュー</h2>
+    <ul>
+      <li><%= link_to "ホーム", root_path %></li>
+      <li><%= link_to "好きなアーティストとか", fav_artist_path %></li>
+      <li><%= link_to "日記的な", diary_path %></li>
+      <li><%= link_to "これまでやった曲", my_history_path %></li>
+      <li><%= link_to "しばいぬのヒミツ", secret_path %></li>
+      <li><%= link_to "追加ログ", update_content_path %></li>
+      <% if admin_signed_in? %>
+        <li><%= link_to "記事管理", articles_path %></li>
+        <li><%= button_to "ログアウト", logout_path, method: :delete, class: "nav-logout-button" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

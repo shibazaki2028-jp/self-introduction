@@ -1,0 +1,55 @@
+/* ===============================================
+   日記のスタイル(diary.html)
+   =============================================== */
+
+/* --- 日記のセクション --- */
+.diary-entry {
+    margin-bottom: 40px;
+}
+
+.diary-entry p {
+    text-indent: 1em;
+    /* 段落の先頭を1文字下げる */
+}
+
+.date {
+    font-size: 0.9em;
+    color: #888;
+    text-align: right;
+}
+
+/* --- マスキングテープで貼ったような写真 --- */
+.scrapbook-photo {
+    position: relative;
+    /* マスキングテープを貼るための基準位置 */
+    display: inline-block;
+    /* 画像のサイズに合わせる */
+}
+
+.scrapbook-photo img {
+    display: block;
+    width: 200px;
+    /* 画像の幅 */
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 写真の影 */
+    transform: rotate(-3deg);
+    /* 少し傾ける */
+}
+
+/* マスキングテープ部分 */
+.scrapbook-photo::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(4deg);
+    /* テープも少し傾ける */
+    width: 80px;
+    height: 30px;
+    background-color: rgba(135, 206, 235, 0.7);
+    /* 半透明の水色 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+    border-right: 1px dashed rgba(255, 255, 255, 0.5);
+}

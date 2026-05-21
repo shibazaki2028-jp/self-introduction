@@ -1,0 +1,34 @@
+<p>どうも</p>
+<p>このページではしばいぬの自己紹介用のページとしてなんとなく作成してるゾ</p>
+<p>自主的に初めて作るやつだから期待はしないように</p>
+<p>というか正直好きなアーティストをみんなに勧めたいだけだから該当ページをぜひ</p>
+
+<section class="link-collection">
+  <h2>リンク</h2>
+  <div class="link-cards">
+    <a href="https://github.com/shibazaki2028-jp" target="_blank" rel="noopener noreferrer" class="link-card">
+      <div class="icon" style="background-color: #333;">git</div>
+      <h3>作者のgithub</h3>
+      <p>githubのリンクです</p>
+    </a>
+  </div>
+</section>
+
+<section class="articles-section">
+  <h2>記事</h2>
+  <% if @articles.any? %>
+    <ul class="article-list">
+      <% @articles.each do |article| %>
+        <li class="article-card">
+          <h3><%= article.title %></h3>
+          <p class="article-meta"><%= l(article.created_at, format: :long) %></p>
+          <div class="article-body"><%= simple_format(article.body) %></div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>まだ記事はありません。</p>
+  <% end %>
+</section>
+
+<p>※このサイトは、生成AI「Gemini」を多用して作成したものであり、作者の技術力や知識等を保障するものではありません。</p>
