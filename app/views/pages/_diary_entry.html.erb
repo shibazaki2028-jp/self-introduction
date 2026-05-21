@@ -1,0 +1,7 @@
+<%= simple_format(entry.body) %>
+<% if entry.image.present? %>
+  <div class="scrapbook-photo">
+    <%= diary_entry_image(entry, css_class: entry.image.start_with?("http") ? "align-left" : "align-right") %>
+  </div>
+<% end %>
+<p class="date"><%= format_diary_date(entry.entry_date) %></p>

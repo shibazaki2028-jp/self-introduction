@@ -12,7 +12,12 @@
 
 - **公開ページ**: ホーム、好きなアーティスト、日記、追加ログなど（未ログインでも閲覧可能）
 - **記事一覧**: 管理者が作成した記事をトップページに表示
-- **管理者のみ**: `/login` からログイン後、記事の作成・編集・削除（`/articles`）
+- **管理者のみ**（`/login` からログイン）:
+  - 記事（`/articles`）— トップページ用
+  - 日記（`/diary_entries`）— 日記ページ用
+  - 追加ログ（`/update_log_entries`）— 追加ログページ用
+  - 好きなアーティスト（`/artist_entries`）— アーティスト紹介ページ用
+- **未ログイン時**: メニューに「ログイン」リンクを表示
 
 ## セットアップ
 
@@ -28,6 +33,7 @@ bin/setup
 export ADMIN_USERNAME=admin
 export ADMIN_PASSWORD=your-strong-secret-password
 bin/rails server
+bin/rails db:seed   # 初回のみ（既存の静的コンテンツをDBへ取り込み）
 ```
 
 ブラウザで http://localhost:3000 を開きます。

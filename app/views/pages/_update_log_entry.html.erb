@@ -1,0 +1,7 @@
+<dt><%= format_update_log_date(entry.log_date) %></dt>
+<dd>
+  <% if entry.title.present? %>
+    <strong><%= entry.title %></strong>
+  <% end %>
+  <%= sanitize_admin_html(entry.body) %>
+</dd>

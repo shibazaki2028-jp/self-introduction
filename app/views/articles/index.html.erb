@@ -3,6 +3,9 @@
   <div class="admin-actions">
     <%= link_to "新規記事を作成", new_article_path, class: "btn-primary" %>
     <%= link_to "トップページを見る", root_path, class: "btn-secondary" %>
+    <%= link_to "日記管理", diary_entries_path, class: "btn-secondary" %>
+    <%= link_to "追加ログ管理", update_log_entries_path, class: "btn-secondary" %>
+    <%= link_to "アーティスト管理", artist_entries_path, class: "btn-secondary" %>
   </div>
 
   <% if @articles.any? %>

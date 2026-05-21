@@ -11,7 +11,12 @@
       <li><%= link_to "追加ログ", update_content_path %></li>
       <% if admin_signed_in? %>
         <li><%= link_to "記事管理", articles_path %></li>
+        <li><%= link_to "日記管理", diary_entries_path %></li>
+        <li><%= link_to "追加ログ管理", update_log_entries_path %></li>
+        <li><%= link_to "アーティスト管理", artist_entries_path %></li>
         <li><%= button_to "ログアウト", logout_path, method: :delete, class: "nav-logout-button" %></li>
+      <% else %>
+        <li><%= link_to "ログイン", login_path %></li>
       <% end %>
     </ul>
   </nav>

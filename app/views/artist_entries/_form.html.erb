@@ -1,0 +1,32 @@
+<%= form_with model: artist_entry, class: "admin-form" do |form| %>
+  <% if artist_entry.errors.any? %>
+    <div class="flash flash-alert">
+      <ul>
+        <% artist_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, "アーティスト名" %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :position, "表示順（小さいほど上）" %>
+    <%= form.number_field :position, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.label :body, "紹介文（HTML可）" %>
+    <%= form.text_area :body, required: true %>
+    <p class="field-hint">&lt;p&gt;、&lt;h3&gt;おすすめの曲&lt;/h3&gt;、&lt;ul class="recommend"&gt; などが使えます。</p>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit class: "btn-primary" %>
+    <%= link_to "一覧に戻る", artist_entries_path, class: "btn-secondary" %>
+  </div>
+<% end %>

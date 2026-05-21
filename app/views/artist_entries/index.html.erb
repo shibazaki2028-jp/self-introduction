@@ -1,0 +1,33 @@
+<h2>好きなアーティストの管理</h2>
+<div class="admin-panel">
+  <div class="admin-actions">
+    <%= link_to "新規アーティストを追加", new_artist_entry_path, class: "btn-primary" %>
+    <%= link_to "公開ページを見る", fav_artist_path, class: "btn-secondary" %>
+  </div>
+
+  <% if @artist_entries.any? %>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>順序</th>
+          <th>名前</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @artist_entries.each do |entry| %>
+          <tr>
+            <td><%= entry.position %></td>
+            <td><%= entry.name %></td>
+            <td class="row-actions">
+              <%= link_to "編集", edit_artist_entry_path(entry), class: "btn-secondary" %>
+              <%= button_to "削除", artist_entry_path(entry), method: :delete, class: "btn-danger", form: { data: { turbo_confirm: "このアーティストを削除しますか？" } } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>アーティストはまだ登録されていません。</p>
+  <% end %>
+</div>

@@ -1,1 +1,11 @@
-<%= render "pages/diary_content" %>
+<section class="diary-entry">
+  <h2>しばいぬの日記</h2>
+
+  <% if @diary_entries.any? %>
+    <% @diary_entries.each do |entry| %>
+      <%= render "pages/diary_entry", entry: entry %>
+    <% end %>
+  <% else %>
+    <p>まだ日記はありません。</p>
+  <% end %>
+</section>

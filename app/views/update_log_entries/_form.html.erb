@@ -1,0 +1,32 @@
+<%= form_with model: update_log_entry, class: "admin-form" do |form| %>
+  <% if update_log_entry.errors.any? %>
+    <div class="flash flash-alert">
+      <ul>
+        <% update_log_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :log_date, "日付" %>
+    <%= form.date_field :log_date, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :title, "見出し（任意）" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, "内容（HTML可）" %>
+    <%= form.text_area :body, required: true %>
+    <p class="field-hint">&lt;ul&gt;&lt;li&gt; や &lt;strong&gt; などのHTMLが使えます。</p>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit class: "btn-primary" %>
+    <%= link_to "一覧に戻る", update_log_entries_path, class: "btn-secondary" %>
+  </div>
+<% end %>

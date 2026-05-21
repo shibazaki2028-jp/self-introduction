@@ -1,0 +1,37 @@
+<%= form_with model: diary_entry, class: "admin-form" do |form| %>
+  <% if diary_entry.errors.any? %>
+    <div class="flash flash-alert">
+      <ul>
+        <% diary_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :entry_date, "日付" %>
+    <%= form.date_field :entry_date, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :body, "本文" %>
+    <%= form.text_area :body, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :image, "画像（ファイル名またはURL）" %>
+    <%= form.text_field :image, placeholder: "例: study_text.JPG または https://..." %>
+    <p class="field-hint">app/assets/images にあるファイル名、または外部画像のURLを入力できます。</p>
+  </div>
+
+  <div>
+    <%= form.label :image_alt, "画像の説明（alt）" %>
+    <%= form.text_field :image_alt %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit class: "btn-primary" %>
+    <%= link_to "一覧に戻る", diary_entries_path, class: "btn-secondary" %>
+  </div>
+<% end %>

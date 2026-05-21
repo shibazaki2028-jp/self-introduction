@@ -1,1 +1,12 @@
-<%= render "pages/update_log_content" %>
+<h2>追加ログ</h2>
+<p>ここでは、これまで追加した要素やバグ修正などについて記述します。なお、日記の内容追加についてはここでは記述しません。</p>
+
+<% if @update_log_entries.any? %>
+  <dl class="update-log">
+    <% @update_log_entries.each do |entry| %>
+      <%= render "pages/update_log_entry", entry: entry %>
+    <% end %>
+  </dl>
+<% else %>
+  <p>まだ追加ログはありません。</p>
+<% end %>

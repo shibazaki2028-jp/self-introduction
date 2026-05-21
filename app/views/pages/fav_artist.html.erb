@@ -1,1 +1,20 @@
-<%= render "pages/fav_artist_content" %>
+<h2>前置き</h2>
+<p>
+  ここでのアーティストとか曲紹介は筆者の主観に基づいたものなので、実際のイメージと異なる場合があります。
+  そのため、ミスマッチが生じる可能性がありますが、ご了承いただけると幸いです。
+  また、ここで紹介しているものは基本的に、私がいつかやりたいと考えている曲が揃っているので、
+  バンドを組みたい時などにぜひ参考にしてください。
+</p>
+
+<section class="likes-list">
+  <h2>好きなアーティスト</h2>
+  <% if @artist_entries.any? %>
+    <ul>
+      <% @artist_entries.each do |entry| %>
+        <%= render "pages/artist_entry", entry: entry %>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>まだアーティストは登録されていません。</p>
+  <% end %>
+</section>

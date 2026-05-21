@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_21_042038) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_21_082125) do
   create_table "articles", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
+    t.string "title"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artist_entries", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.integer "position"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diary_entries", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.date "entry_date"
+    t.string "image"
+    t.string "image_alt"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "update_log_entries", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.date "log_date"
     t.string "title"
     t.datetime "updated_at", null: false
   end
