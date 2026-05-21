@@ -36,7 +36,7 @@ bin/rails server
 bin/rails db:seed   # 初回のみ（既存の静的コンテンツをDBへ取り込み）
 ```
 
-ブラウザで http://localhost:3000 を開きます。
+ブラウザで(https://shibazaki-introduction.onrender.com/) を開きます。
 
 ## 管理者認証について
 
