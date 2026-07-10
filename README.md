@@ -8,7 +8,6 @@
 HTML
 CSS
 JavaScript
-生成AI(Gemini3の思考モード)
 
 ## 注意点
 
